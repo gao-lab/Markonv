@@ -11,12 +11,12 @@ conda activate markonv
 
 ## Quick start
 
-```bash
+```python
 from MarkonvCore import *
 Markonvlayer = MarkonvV(kernel_length, kernel_number, channel_size, initKernelLen=None, channel_last=1, bias=False)
 ```
 Parameters: 
-```bash
+```
 kernel_length: Size of the convolutional kernel, max size of kernel in Markonv kernel.
 kernel_number: Number of kernels in Markonv layer.
 channel_size: Number of channels in input sequences, for example, DNA sequences encoded in one-hot encoding is 4.
@@ -25,15 +25,18 @@ channel_last: Whether the channel dimension in input sequence is the last dimens
 bias: If True, adds a learnable bias to the output. Default: False
 ```
 
-### example
-```bash
+### Example
+```python
+import sys
+sys.path.append("core")
+from MarkonvCore import *
 Markonvlayer = MarkonvV(kernel_length=10, kernel_number=16, channel_size=4).to("cuda:0")
 input = torch.randn(20, 100, 4)
 input = input.to("cuda:0")
 output = Markonvlayer(input)
 ```
 
-## demo results
+## Demo
 1. Decompress the dataset
 
 ```bash
@@ -45,7 +48,7 @@ tar -zxvf ./example.tar.gz
 2. Training Markonv-based networks
 
 ```bash
-cd ../../scripts/demo
+cd ../scripts/demo
 python3 torch_main.py
 ```
 
