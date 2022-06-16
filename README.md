@@ -1,10 +1,8 @@
 # Example of how to train Markonv-based neural network
-This repository is the Markonv neural layer built on PyTorch and example for using Markonv. the scripts contain Markonv layer and Markonv operator is in ./core. Below we show how to train a simple neural network based on Markonv layer.
+This repository contains the Markonv neural layer built on PyTorch and example for using Markonv. The Markonv layer and Markonv operator is in ./core. Below we show how to train a simple neural network based on Markonv layer.
 
 
 ## Requirements
-
-### Python environment
 
 ```bash
 conda env create -f env_markonv.yaml
@@ -19,12 +17,12 @@ Markonvlayer = MarkonvV(kernel_length, kernel_number, channel_size, initKernelLe
 ```
 Parameters: 
 ```bash
-kernel_length:Size of the convolving kernel, max size of kernel in Markonv kernel.
+kernel_length: Size of the convolutional kernel, max size of kernel in Markonv kernel.
 kernel_number: Number of kernels in Markonv layer.
-channel_size: number of channel in input sequences, for example, DNA sequences encoded in one-hot encoding is 4.
-initKernelLen: size of Mask, the init useful part in Markonv kernel.
-channel_last: whether the channel dimension in input sequence is the last dimension.
-bias:If True, adds a learnable bias to the output. Default: False
+channel_size: Number of channels in input sequences, for example, DNA sequences encoded in one-hot encoding is 4.
+initKernelLen: Size of mask, the init useful part in Markonv kernel.
+channel_last: Whether the channel dimension in input sequence is the last dimension.
+bias: If True, adds a learnable bias to the output. Default: False
 ```
 
 ### example
@@ -44,7 +42,7 @@ tar -zxvf ./example.tar.gz
 ```
 
 
-2. Training networks based Markonv
+2. Training Markonv-based networks
 
 ```bash
 cd ../../scripts/demo
