@@ -1,5 +1,5 @@
 # Example of how to train Markonv-based neural network
-This repository contains the Markonv neural layer built on PyTorch and example for using Markonv. The Markonv layer and Markonv operator is in ./core. Below we show how to train a simple neural network based on Markonv layer.
+This repository contains the Markonv neural layer built on PyTorch and example for using Markonv. The scripts for Markonv layer and Markonv operator is in ./core. Below we show how to train a simple neural network based on Markonv layer.
 
 
 ## Requirements
