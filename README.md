@@ -1,13 +1,10 @@
-# Example of how to train Markonv-based neural network
-This repository contains the Markonv neural layer built on PyTorch and example for using Markonv. The scripts for Markonv layer and Markonv operator is in ./core. Below we show how to train a simple neural network based on Markonv layer.
+# A PyTorch-based implementation of Markonv
 
+This repository contains the core code of Markonv neural layerand example for using Markonv. The scripts for Markonv layer and Markonv operator is in ./core. 
 
-## Requirements
+**Citation**: 
 
-```bash
-conda env create -f env_markonv.yaml
-conda activate markonv
-```
+Jing-Yi Li, Yuhao Tan, Zheng-Yang Wen, Yu-Jian Kang, Yang Ding, and Ge Gao. Markonv: a novel convolutional layer with inter-positional correlations modeled. _bioRxiv_. doi: https://doi.org/10.1101/2022.06.09.495500
 
 ## Quick start
 
@@ -25,7 +22,7 @@ channel_last: Whether the channel dimension in input sequence is the last dimens
 bias: If True, adds a learnable bias to the output. Default: False
 ```
 
-### Example
+### Code snippet
 ```python
 import sys
 sys.path.append("core")
@@ -36,7 +33,15 @@ input = input.to("cuda:0")
 output = Markonvlayer(input)
 ```
 
-## Demo
+## Demo for training a Markonv-based neural network
+
+0. Set a working space with conda
+
+```bash
+conda env create -f env_markonv.yaml
+conda activate markonv
+```
+
 1. Decompress the dataset
 
 ```bash
@@ -51,6 +56,3 @@ tar -zxvf ./example.tar.gz
 cd ../scripts/demo
 python3 torch_main.py
 ```
-
-
-
